@@ -1,0 +1,33 @@
+.span-menu {
+  padding: 7px;
+}
+
+.container-in {
+  margin-top: 20px;
+}
+
+.sticky {
+  position: fixed !important;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.banner {
+  margin-top: 140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f0f0f0;
+}
+
+.banner h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.breadcrumb {
+  justify-content: flex-end;
+    margin-right: 30px;
+}

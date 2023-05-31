@@ -1,0 +1,38 @@
+@import './BlockViewer.scss';
+@import './TimelineDemo.scss';
+@import './flags/flags.css';
+@import './badges.scss';
+
+
+.p-steps-item .p-steps-icon {
+    background-color: #0081c2;
+  }
+
+  .form-firma {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  
+    .canvas-wrapper {
+      flex-grow: 1;
+      width: 100%;
+    }
+  
+    .button-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+  }
+
+  .error-label {
+    color: #e24c4c;
+  }
+
+  .error-div {
+    color: #e24c4c;
+    border: 2px solid #e24c4c;
+    padding: 20px 5px 20px;
+    border-radius: 5px;
+  }
+  

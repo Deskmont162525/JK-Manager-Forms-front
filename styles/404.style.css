@@ -1,0 +1,76 @@
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+    font-weight:normal;
+    font-family: 'Oswald', sans-serif;
+}
+.body404 {
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(rgba(247, 243, 243, 0.452), rgb(201, 117, 44)),
+      url("../public/demo/images/notfound/back404.png") black;
+    background-size: contain;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+
+.cover404 {
+    width:100vw;
+    height:100vh;
+}
+
+.container404 {
+    color:white;
+    text-align: right;
+    padding:100px 200px 0 0 ;
+}
+
+.h1404 {
+    font-size:90px;
+    font-weight: bold;
+    letter-spacing: 5px;
+      line-height: 90px;
+}
+.h2404 {
+    text-transform: uppercase;
+    letter-spacing: 7.5px;
+}
+
+.blockquote404 {
+    font-family: 'Georgia', serif;
+    font-style:italic;
+    margin-top:50px;
+    font-size:17px;
+    padding-left:100px;
+    text-align:left;
+}
+.blockquote404 .p404 {
+  font-family: sans-serif;
+  font-size: 13px;
+  margin-top: 5px;
+  font-style: normal; 
+}
+
+.btn404 {
+    font-family: sans-serif;
+    background: #FF5652;
+    color: white;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 2px;
+    margin: 80px 0 0 0;
+    text-decoration: none;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.img404 {
+    margin-bottom:50px;
+}

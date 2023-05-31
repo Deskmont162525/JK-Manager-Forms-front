@@ -1,0 +1,255 @@
+/* section superadmin */
+.div-container-sa {
+  margin: 70px;
+}
+
+.ico-med {
+  font-size: 2rem;
+}
+
+.card-ad2 {
+  position: relative;
+  background-color: #fff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 300px;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  /* agregar box-shadow al card */
+  transition: box-shadow 0.3s ease-in-out;
+  /* agregar transición al box-shadow */
+  margin-bottom: 40px
+}
+
+.card-ad2:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.icon-container-ad2 {
+  align-items: center;
+  background-color: #ff5e3a;
+  display: flex;
+  justify-content: center;
+  height: 80px;
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  border-radius: 50%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 2;
+  /* ajustamos el z-index para que quede por encima del card */
+}
+
+.icon-container-ad2 i {
+  color: #fff;
+  font-size: 2rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  /* agregamos box-shadow al icono */
+  border-radius: 50%;
+  /* agregamos borde redondeado al icono */
+  padding: 1rem;
+  /* agregamos padding para separar el icono del borde del contenedor */
+}
+
+.card-body-ad2 {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 40px;
+  /* ajustamos el margen superior para que empiece desde la mitad del icono hacia abajo */
+  position: relative;
+  /* agregamos posición relativa para que se posicione correctamente el botón */
+  z-index: 1;
+  /* ajustamos el z-index para que quede por debajo del icono */
+}
+
+.card-description-ad2 {
+  margin-top: 1rem;
+  /* agregamos margen superior para separar la descripción del título */
+}
+
+.card-info-ad2 {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* .card-info-ad2 i {
+    margin-right: 0.5rem; 
+  } */
+
+
+.card-info-ad2-ico {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  background-color: #3f51b5;
+  height: 50px;
+  width: 60px;
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+}
+
+.card-info-ad2 i {
+  color: #fff;
+  margin-right: 0.5rem;
+  /* ajustamos el margen derecho del icono de la información */
+  font-size: 1.5rem;
+  margin-left: 0.7rem;
+}
+
+.card-button-ad2 {
+  display: block;
+  margin-top: 1rem;
+  /* agregamos margen superior para separar el botón del cuerpo del card */
+  background-color: #ff5e3a;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.card-button-ad2 i {
+  margin-right: 0.5rem;
+  /* ajustamos el margen derecho del icono del botón */
+}
+
+
+/* page redirigir */
+
+.container-redi {
+  margin-top: 0px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.grid-redi {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: start;
+}
+
+.grid-redi [class^="MuiGrid-root"] {
+  padding: 0;
+}
+
+.grid-redi [class^="MuiGrid-root"][class*="-xs-"] {
+  padding: 20px;
+}
+
+.title-redi {
+  font-size: 70px !important;
+  font-weight: 700 !important;
+  color: #262626 !important;
+  text-align: flex-start !important;
+}
+
+@media (max-width: 900px) {
+  .title-redi {
+    font-size: 50px !important;
+  }
+}
+
+.subtitle-redi {
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  color: #262626 !important;
+  margin: 0px 80px !important;
+}
+
+@media (max-width: 900px) {
+  .subtitle-redi {
+    font-size: 30px !important;
+  }
+}
+
+.link-redi {
+  font-size: 30px !important;
+  font-weight: 400 !important;
+  color: #0653B6 !important;
+  margin: 20px 0px !important;
+  cursor: pointer !important;
+}
+
+@media (max-width: 900px) {
+  .link-redi {
+    font-size: 20px !important;
+  }
+}
+
+.image-redi {
+height: 260px;
+}
+
+@media (max-width: 600px) {
+  .image-redi {
+    height: 100px;
+    }
+}
+
+
+/* page verificacion usuario */
+a,a[href],a:hover, a:link, a:visited {
+  /* This is the link colour */
+  text-decoration: none!important;
+  color: #0000EE;
+}
+.link {
+  text-decoration: underline!important;
+}
+p, p:visited {
+  /* Fallback paragraph style */
+  font-size:15px;
+  line-height:24px;
+  font-family:'Helvetica', Arial, sans-serif;
+  font-weight:300;
+  text-decoration:none;
+  color: #000000;
+}
+h1 {
+  /* Fallback heading style */
+  font-size:22px;
+  line-height:24px;
+  font-family:'Helvetica', Arial, sans-serif;
+  font-weight:normal;
+  text-decoration:none;
+  color: #000000;
+}
+.ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass td {line-height: 100%;}
+.ExternalClass {width: 100%;}
+
+
+.spinner-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3; /* Color del borde del spinner */
+  border-top: 6px solid #3498db; /* Color de la parte superior del spinner */
+  border-radius: 50%;
+  width: 30px; /* Tamaño del spinner */
+  height: 30px; /* Tamaño del spinner */
+  animation: spin 1s linear infinite; /* Animación de rotación del spinner */
+  margin-right: 10px; /* Espacio entre el spinner y el texto */
+}
+
+.spinner-text {
+  /* Estilos para el texto al lado del spinner */
+  margin-left: 10px;
+  color: #3498db;
+  font-weight: bold; /* Engrosa el texto */
+  font-size: 1em;
+}
