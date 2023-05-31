@@ -9,6 +9,10 @@
         "export": "next build && next export",
         "lint": "next lint"
     },
+    "engines": {
+        "node": "14.17.0",
+        "npm": "6.14.13"
+    },
     "dependencies": {
         "@ant-design/icons": "^5.0.1",
         "@fortawesome/fontawesome-svg-core": "^1.2.34",
