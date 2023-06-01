@@ -2,7 +2,6 @@ import { http2 } from "../data/fetch2";
 
 const url = process.env.URL_BACK;
 const urlAuth = process.env.NEXT_PUBLIC_URL_BACK;
-
 export const AuthService = {
   postSignIn: async (data) => {
     try {
