@@ -1,4 +1,4 @@
-
+import { Accordion, AccordionTab } from 'primereact/accordion';
 import { Checkbox } from 'primereact/checkbox';
 import React from 'react';
 import { FormsDinamicosFamiliars } from '../../components/formsFamiliDina';
@@ -40,7 +40,7 @@ const FormDinamico4 = ({ stateTemp3, setStateTemp3, error, setError, errorF, set
                             )}
                         </div>
 
-                        {/* <Accordion activeIndex={0}>
+                        <Accordion activeIndex={0}>
                             <AccordionTab header="Información Legal por Fallecimiento">
                                 <p className="m-2">
                                     En caso de fallecimiento del asociado, el fondo de empleados Grupo Empresarial Uno A - FOET, hará entrega a sus beneficiarios dentro de los términos establecidos en los estatutos y de acuerdo con la normatividad
@@ -60,7 +60,7 @@ const FormDinamico4 = ({ stateTemp3, setStateTemp3, error, setError, errorF, set
                                     de Riesgo para efectos de legalizar mi afiliación al Empleador, para que efectúe a nombre y a favor de FOET los siguientes descuentos:
                                 </p>
                             </AccordionTab>
-                        </Accordion> */}
+                        </Accordion>
 
                         <ImputType
                             type="number"
@@ -80,7 +80,7 @@ const FormDinamico4 = ({ stateTemp3, setStateTemp3, error, setError, errorF, set
                             error={error?.periodo_nomina}
                             placeHolder="Selecciona una opción"
                         />
-                        {/* <Accordion activeIndex={0}>
+                        <Accordion activeIndex={0}>
                             <AccordionTab header='AUTORIZACIÓN PARA EL TRATAMIENTO DE DATOS PERSONALES POR EL FONDO DE EMPLEADOS GRUPO EMPRESARIAL UNO A "FOET"'>
                                 <p className="m-2">
                                     Para Bases de datos creadas después de la entrada en la vigencia de la Política de Tratamiento de información. Con el propósito de dar un adecuado tratamiento a sus datos personales de acuerdo al Régimen General de
@@ -121,7 +121,7 @@ const FormDinamico4 = ({ stateTemp3, setStateTemp3, error, setError, errorF, set
                                     )}
                                 </div>
                             </AccordionTab>
-                        </Accordion> */}
+                        </Accordion>
                     </form>
                 </div>
             </div>

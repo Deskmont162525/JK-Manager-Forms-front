@@ -60,7 +60,7 @@ const FormDinamico1 = ({ stateTemp, setStateTemp, error, setError }) => {
                             value={stateTemp?.profecion_ocupacion}
                             setValue={onChangeInputForm}
                             error={error?.profecion_ocupacion}
-                            placeHolder="Ingresa tu número de documento"
+                            placeHolder="Ingresa tu Profesión y/o Ocupación"
                             required={true}
                         />
                     </form>
