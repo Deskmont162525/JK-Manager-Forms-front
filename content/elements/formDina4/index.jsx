@@ -1,27 +1,11 @@
+import { Accordion, AccordionTab } from 'primereact/Accordion';
+import { Checkbox } from 'primereact/checkbox';
 import React from 'react';
+import { FormsDinamicosFamiliars } from '../../components/formsFamiliDina';
+import { ImputSelect } from '../../utils/InputSelect';
+import { ImputType } from '../../utils/InputType';
 import { onChangeInput } from '../../../data/functions';
 import { dataPeriodo } from '../../../data/arrays';
-
-// Resto de tu código...
-
-const importComponents = async () => {
-  try {
-    const { Accordion, AccordionTab } = await import('primereact/Accordion');
-    const { Checkbox } = await import('primereact/checkbox');
-    const { FormsDinamicosFamiliars } = await import('../../components/formsFamiliDina');
-    const { ImputSelect } = await import('../../utils/InputSelect');
-    const { ImputType } = await import('../../utils/InputType');
-    
-    // Resto de tu código que utiliza los componentes importados
-
-  } catch (error) {
-    console.error('Error al importar los componentes:', error);
-  }
-};
-
-// Llamada a la función de importación
-importComponents();
-
 
 const FormDinamico4 = ({ stateTemp3, setStateTemp3, error, setError, errorF, setErrorF }) => {
     React.useEffect(() => {
