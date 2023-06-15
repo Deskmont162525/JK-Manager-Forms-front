@@ -24,11 +24,15 @@ const FormDinamico5 = ({ stateTemp4, setStateTemp4, error, setError }) => {
 
                 const requestOptions = {
                     method: 'POST',
+                    headers: {
+                        "Content-Type": "multipart/form-data",
+                      },
                     body: formdata,
                     redirect: 'follow'
                 };
                 setIsUploading(true);
-                const response = await fetch(`${url}/info_5/info-images/${stateTemp4?.id_usuario}`, requestOptions);
+                const response = await fetch(`${url}/info_5/info-images/${stateTemp4?.id_usuario}`, requestOptions                    
+                  );
                 const result = await response.json();
 
                 if (result?.code === 200) {
