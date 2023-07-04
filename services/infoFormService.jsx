@@ -5,7 +5,7 @@ const cookies = parseCookies();
 const codigo = cookies.usuario_invitado ? JSON.parse(cookies.usuario_invitado) : '';
 
 const url = process.env.NEXT_PUBLIC_URL_BACK;
-const urlLocal = "http://localhost:7000/api";
+// const urlLocal = "http://localhost:7000/api";
 
 
 export const InfoFormService = {
@@ -87,7 +87,7 @@ export const InfoFormService = {
         };
         try {
             return await http
-                .post(`${urlLocal}/info_5/info-images/infoIMG/${data?.id_usuario}`, JSON.stringify(dataSend), codigo?.codigo)
+                .post(`${url}/info_5/info-images/infoIMG/${data?.id_usuario}`, JSON.stringify(dataSend), codigo?.codigo)
                 .then((res) => {
                     console.log('res desde fect', res);
                     return res;
