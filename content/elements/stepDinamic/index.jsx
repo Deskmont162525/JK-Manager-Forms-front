@@ -14,7 +14,7 @@ import { addInfoStepContacto, addInfoStepFamiliar, addInfoStepFinanciera, addInf
 
 export const CardStepFormDinami = () => {
     const { infoSteps, dispatchInfoSteps } = useContext(infoStepContext);
-    const [activeIndex, setActiveIndex] = useState(0);
+    const [activeIndex, setActiveIndex] = useState(4);
     const [stateTemp, setStateTemp] = React.useState(infoSteps?.info_p);
     const [stateTemp1, setStateTemp1] = React.useState(infoSteps?.info_uc);
     const [stateTemp2, setStateTemp2] = React.useState(infoSteps?.info_ilf);

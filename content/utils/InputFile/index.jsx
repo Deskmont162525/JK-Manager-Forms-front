@@ -17,6 +17,10 @@ export const InputFile = ({ name, label, handleFileUpload, error, isUploading })
                 className={error?.name === name ? (error?.status === true ? 'form-control is-invalid' : 'form-control is-valid') : ''}
                 accept="image/*" // Añadimos la validación para que solo se acepten imágenes
                 emptyTemplate={<p className="m-0">{label}</p>}
+                customUpload={true}
+                uploadHandler={handleFileUpload}
+                uploadLabel="Cargar"
+                cancelLabel="Cancelar"
             />
 
             {error && (
