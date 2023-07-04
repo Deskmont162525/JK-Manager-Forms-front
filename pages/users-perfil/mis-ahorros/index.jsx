@@ -38,7 +38,7 @@ export async function getServerSideProps(context) {
     const cookies = nookies.get(context);
     const decodeData = cookies?.userJKMF ? JSON.parse(cookies.userJKMF) : '';
       const [dataUser] = await Promise.all([AdminService.getDataStadoCuentaById(decodeData?.data?.numero_documento, decodeData?.token)]);
-      console.log("dataUser", decodeData?.data?.numero_documento);
+    //   console.log("dataUser", decodeData?.data?.numero_documento);
     return { props: {dataUser} };
 }
 export default requireAuthentication(MisAhorrosPage);
