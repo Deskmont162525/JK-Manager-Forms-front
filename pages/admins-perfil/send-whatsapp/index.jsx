@@ -11,7 +11,7 @@ const PageSendWhasapp = () => {
             <Menu items={menuItemsAd}/>
             <Banner title="Envio Masivo Whatsapp" position="1" url={rutaAdmin?.url} />
             <div className="surface-section px-4 py-8 md:px-6 lg:px-8">
-            <FormularioSendW />
+            {/* <FormularioSendW /> */}
             </div>
         </Layout>
         

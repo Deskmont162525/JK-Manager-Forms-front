@@ -6,7 +6,7 @@ import { Toolbar } from 'primereact/toolbar';
 import { Tag } from 'primereact/tag';
 import { InputText } from 'primereact/inputtext';
 import { useRouter } from 'next/router';
-import { obtenerFechaSinHora } from '../../../data/functions';
+import { formattedDate, obtenerFechaSinHora } from '../../../data/functions';
 
 const TableFormsDetail = ({ dataClientesA }) => {
     const router = useRouter();
@@ -55,16 +55,48 @@ const TableFormsDetail = ({ dataClientesA }) => {
         setProducts(newData);
     }, [dataClientesA]);
     
+    // const exportPdf = () => {
+    //     import('jspdf').then((jsPDF) => {
+    //         import('jspdf-autotable').then(() => {
+    //             const doc = new jsPDF.default(0, 0);
+    //             doc.autoTable(exportColumns, products);
+    //             doc.save(`data_export_${formattedDate}.pdf`);
+    //         });
+    //     });
+    // };
     const exportPdf = () => {
         import('jspdf').then((jsPDF) => {
-            import('jspdf-autotable').then(() => {
-                const doc = new jsPDF.default(0, 0);
-                doc.autoTable(exportColumns, products);
-                doc.save('products.pdf');
+          import('jspdf-autotable').then(() => {
+            const doc = new jsPDF.default();
+            const tableRows = products.map((product) => Object.values(product));
+      
+            doc.autoTable({
+              columns: exportColumns,
+              body: tableRows,
+              styles: {
+                cellPadding: 2,
+                fontSize: 10,
+                fontStyle: 'normal',
+              },
+              columnStyles: {
+                username: { columnWidth: 20 },
+                userId: { columnWidth: 20 },
+                correo: { columnWidth: 20 },
+                telefono: { columnWidth: 20 },
+                cantidad_hijos: { columnWidth: 20 },
+                createdAt: { columnWidth: 20 },
+                ciudad_residencia: { columnWidth: 20 },
+                estado: { columnWidth: 15 }
+              },
             });
+      
+            doc.save('table.pdf');
+          });
         });
-    };
-
+      };
+      
+      
+console.log("hhhh",products);
     const exportExcel = () => {
         import('xlsx').then((xlsx) => {
             const worksheet = xlsx.utils.json_to_sheet(products);
@@ -74,7 +106,7 @@ const TableFormsDetail = ({ dataClientesA }) => {
                 type: 'array'
             });
 
-            saveAsExcelFile(excelBuffer, 'products');
+            saveAsExcelFile(excelBuffer, 'data');
         });
     };
 
@@ -87,7 +119,7 @@ const TableFormsDetail = ({ dataClientesA }) => {
                     type: EXCEL_TYPE
                 });
 
-                module.default.saveAs(data, fileName + '_export_' + new Date().getTime() + EXCEL_EXTENSION);
+                module.default.saveAs(data, fileName + '_export_' + formattedDate + EXCEL_EXTENSION);
             }
         });
     };

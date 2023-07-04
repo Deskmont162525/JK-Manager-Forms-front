@@ -24,11 +24,11 @@ export const ImputType = ({ name, label, value, type, setValue, required, error,
 
             {name === 'email' ? (
                 <div id={name} className="invalid-feedback">
-                    Por favor, elije otro {name} este ya esta en uso o comunicate con el admin*
+                    Por favor, elije otro {label} este ya esta en uso o comunicate con el admin*
                 </div>
             ) : (
                 <div id={name} className="invalid-feedback">
-                    Por favor, elije {name} campo obligatorio*
+                    Por favor, elije un {label} campo obligatorio*
                 </div>
             )}
         </div>

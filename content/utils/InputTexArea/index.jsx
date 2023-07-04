@@ -10,12 +10,12 @@ export const ImputTextA = ({ name, label, value, type, setValue, error, placeHol
                 {label}
             </label>
             <InputTextarea style={{height: "45px !important"}} name={name} type={type} 
-            className={`form-control ${error !== undefined ? error === true ? "": 'is-valid':""}`}
+            className={`form-control ${error !== undefined ? error === true ? "is-invalid": 'is-valid':""}`}
             onChange={setValue} value={value} placeholder={placeHolder} />
 
-            {/* <div id={name} className="invalid-feedback">
-                Por favor, elije un nombre de usuario. campo obligatorio
-            </div> */}
+            <div id={name} className="invalid-feedback">
+                Por favor, elije una {name}. campo obligatorio
+            </div>
         </div>
     );
 };

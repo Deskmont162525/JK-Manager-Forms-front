@@ -9,7 +9,7 @@ const PageAdminIni = ({data}) => {
             <div className="surface-ground px-4 py-5 md:px-6 lg:px-8">
                 <div className="grid">
                     {data?.map((item) => (
-                        <CardAdminF key={item._doc._id} id={item._doc._id} name={item._doc.nombre} description={item._doc.descripcion} count={item.formularioCount} url="admins-perfil/vista-pdf" />
+                        <CardAdminF key={item._doc._id} id={item._doc._id} name={item._doc.nombre} description={item._doc.descripcion} nameForm={item._doc?.nameForm} count={item.formularioCount} url="admins-perfil/vista-pdf" />
                     ))}
                 </div>
             </div>

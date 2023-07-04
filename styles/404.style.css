@@ -11,7 +11,7 @@
     width: 100%;
     background: linear-gradient(rgba(247, 243, 243, 0.452), rgb(201, 117, 44)),
       url("../public/demo/images/notfound/back404.png") black;
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     display: flex;
     align-items: center;
@@ -29,7 +29,7 @@
 .container404 {
     color:white;
     text-align: right;
-    padding:100px 200px 0 0 ;
+    padding:20px ;
 }
 
 .h1404 {

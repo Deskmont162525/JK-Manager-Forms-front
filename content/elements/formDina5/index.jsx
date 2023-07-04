@@ -11,7 +11,6 @@ const FormDinamico5 = ({ stateTemp4, setStateTemp4, error, setError }) => {
     const [isUploading, setIsUploading] = useState(false);
     const handleFileUpload2 = async (event) => {
         const file = event.files[0];
-
         if (!file) {
             setError({
                 ...error,
@@ -24,9 +23,6 @@ const FormDinamico5 = ({ stateTemp4, setStateTemp4, error, setError }) => {
 
                 const requestOptions = {
                     method: 'POST',
-                    headers: {
-                        "Content-Type": "multipart/form-data",
-                      },
                     body: formdata,
                     redirect: 'follow'
                 };

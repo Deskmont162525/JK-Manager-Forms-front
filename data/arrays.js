@@ -80,4 +80,11 @@ export const tipoUsuarioOptions = [
     { label: 'Cliente', value: 'Cliente' }
 ];
 
-
+export const tiposDeCampo = [
+    { label: 'Texto', value: 'texto' },
+    { label: 'Número', value: 'numero' },
+    { label: 'Fecha', value: 'fecha' },
+    { label: 'Selección', value: 'seleccion' },
+    { label: 'Adjuntar Archivo', value: 'adjuntarArchivo' }
+  ];
+  

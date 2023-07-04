@@ -1,4 +1,5 @@
 import { items } from './arrays';
+import { isEmail } from 'validator';
 
 const currentDate = new Date();
 export const formattedDate = currentDate.toISOString().split('T')[0];
@@ -138,6 +139,7 @@ export const onClickFamiliElimi = (e, { count, setCount }) => {
         });
     }
 };
+
 
 // export const validarFamiliares = (familiares, errorF, setErrorF) => {
 //     for (let objeto of familiares) {
@@ -352,4 +354,118 @@ function validateObjectVacios(obj, { error, setError }) {
   
     return hasError;
   }
+  
+
+//   funciones para solicitar forms
+export const onChangeCampoReque = (index, value, {setError, error}, stateTemp, setStateTemp) => {
+    const nuevosCamposRequeridos = [...stateTemp.camposRequeridos];
+    nuevosCamposRequeridos[index] = {
+      ...nuevosCamposRequeridos[index],
+      label: value
+    };
+  
+    const nuevosErrores = { ...error };
+    if (value === '') {
+      nuevosErrores[`label_${index}`] = true;
+    } else {
+      nuevosErrores[`label_${index}`] = false;
+    }
+  
+    setStateTemp({
+      ...stateTemp,
+      camposRequeridos: nuevosCamposRequeridos
+    });
+    setError(nuevosErrores);
+  };
+  
+  export const onChangeCampoRequeTipo = (index, value, {setError, error}, stateTemp, setStateTemp) => {
+    const nuevosCamposRequeridos = [...stateTemp.camposRequeridos];
+    nuevosCamposRequeridos[index] = {
+      ...nuevosCamposRequeridos[index],
+      tipo: value
+    };
+  
+    const nuevosErrores = { ...error };
+    if (value === '') {
+      nuevosErrores[`tipo_${index}`] = true;
+    } else {
+      nuevosErrores[`tipo_${index}`] = false;
+    }
+  
+    setStateTemp({
+      ...stateTemp,
+      camposRequeridos: nuevosCamposRequeridos
+    });
+    setError(nuevosErrores);
+  };
+
+  export const validarFormularioSF = (formulario, setError) => {
+    const { nombreFormulario, descripcionFormulario, camposRequeridos } = formulario;
+    let nuevosErrores = {};
+  
+    if (nombreFormulario === '') {
+      nuevosErrores.nombreFormulario = true;
+    } else {
+      nuevosErrores.nombreFormulario = false;
+    }
+  
+    if (descripcionFormulario === '') {
+      nuevosErrores.descripcionFormulario = true;
+    } else {
+      nuevosErrores.descripcionFormulario = false;
+    }
+  
+    const nuevosCamposErrores = camposRequeridos.map((campo, index) => {
+      const campoErrores = {};
+  
+      if (campo.label === '') {
+        campoErrores[`label_${index}`] = true;
+      } else {
+        campoErrores[`label_${index}`] = false;
+      }
+  
+      if (campo.tipo === '') {
+        campoErrores[`tipo_${index}`] = true;
+      } else {
+        campoErrores[`tipo_${index}`] = false;
+      }
+  
+      return campoErrores;
+    });
+  
+    nuevosErrores = nuevosCamposErrores.reduce((prev, current) => ({ ...prev, ...current }), nuevosErrores);
+    setError(nuevosErrores);
+  
+    // Verificar si hay algún error (true)
+    const hayErrores = Object.values(nuevosErrores).some((error) => error);
+    return !hayErrores;
+  };
+
+  export const validarFormularioSS = (formulario, error, setError) => {
+    const { nombreFormulario, correoElectronico, descripcionProblema } = formulario;
+  
+    setError({
+      nombreFormulario: nombreFormulario === '',
+      correoElectronico: correoElectronico === '' || !isEmail(correoElectronico),
+      descripcionProblema: descripcionProblema === ''
+    });
+  
+    // Verificar si hay algún error (true)
+    const hayErrores = Object.values(error).some((error) => error);
+    return !hayErrores;
+  };
+  
+
+export const onchangeInputEmail = (event, {setError}, state, setState) => {
+  const { name, value } = event.target;
+   
+  setError({
+    [name]: value === '' || !isEmail(value),
+  });
+  setState({
+    ...state,
+    [name]: value
+});
+};
+
   

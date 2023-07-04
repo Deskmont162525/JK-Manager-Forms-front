@@ -14,9 +14,7 @@ const FormularioSendW = () => {
         formState: { errors },
         reset
     } = useForm({
-        defaultValues: {
-            numbers: '' // Agregar numbers aquí
-        }
+        defaultValues: {}
     });
     const [phoneNumbers, setPhoneNumbers] = useState([]);
 
@@ -27,12 +25,6 @@ const FormularioSendW = () => {
     const onSubmit = async (data) => {
         console.log(data);
     };
-
-    //  const handleAddPhoneNumber = () => {
-    //       const newPhoneNumber = document.getElementById('numbers').value;
-    //       setPhoneNumbers((prevPhoneNumbers) => [...prevPhoneNumbers, newPhoneNumber]);
-    //       document.getElementById('numbers').value = '';
-    //   };
 
     const handleAddPhoneNumber = () => {
         const newPhoneNumber = watch('numbers');
@@ -48,23 +40,23 @@ const FormularioSendW = () => {
     };
 
     const validatePhoneNumber = (phoneNumber) => {
-      console.log("lo que recibe validar ", phoneNumber);
+        console.log('lo que recibe validar ', phoneNumber);
 
-        const regex = /^\d{10},$/; // Expresión regular que valida que el número tenga exactamente 10 dígitos y que el caracter 11 sea una coma
+        const regex = /^\d{10}(,\d{10})*$/; // Expresión regular corregida
         if (!regex.test(phoneNumber)) {
-          console.log("endonde entra 1 ", !regex.test(phoneNumber))
+            console.log('endonde entra 1 ', !regex.test(phoneNumber));
             return false;
         }
 
-        const numberOnly = phoneNumber.replace(',', ''); // Elimina la coma del final del número
+        const numberOnly = phoneNumber.replace(/,/g, ''); // Elimina todas las comas del número
         if (numberOnly.length !== 10) {
-          console.log("endonde entra 2 ", !regex.test(numberOnly.length))
+            console.log('endonde entra 2 ', !regex.test(numberOnly.length));
             return false;
         }
 
         if (!/^\d+$/.test(numberOnly)) {
             // Valida que solo tenga dígitos del 0-9
-            console.log("endonde entra 3 ", !/^\d+$/.test(numberOnly))
+            console.log('endonde entra 3 ', !/^\d+$/.test(numberOnly));
             return false;
         }
 
@@ -96,28 +88,13 @@ const FormularioSendW = () => {
                 {errors.fromPhone && <small className="p-error">{errors.fromPhone.message}</small>}
             </div>
             <div className="p-field">
-                <label htmlFor="numbers">Números de teléfono a los que se enviará el mensaje (separados por coma)</label>
+                <label htmlFor="numbersid">Números de teléfono a los que se enviará el mensaje (separados por coma)</label>
                 <div className="p-inputgroup">
                     <span className="p-inputgroup-addon">
                         <i className="pi pi-phone"></i>
                     </span>
-                    {/* <InputText
-                        id="numbers"
-                        type="text"
-                        placeholder="Ingrese los números de teléfono separados por coma"
-                        {...register('numbers', {
-                            required: 'Este campo es requerido',
-                            pattern: {
-                                value: /^(\d+,)*\d+$/,
-                                message: 'Ingresa los números de teléfono separados por coma'
-                            }
-                        })}
-                        className={errors.numbers ? 'p-invalid' : ''}
-                    />
-                     {errors.numbers && <small className="p-error">{errors.numbers.message}</small>}
-                    <Button type="button" icon="pi pi-plus" className="p-button-outlined" onClick={handleAddPhoneNumber} /> */}
                     <InputText
-                        id="numbers"
+                        id="numbersid"
                         type="text"
                         placeholder="Ingrese los números de teléfono separados por coma"
                         {...register('numbers', {
@@ -130,8 +107,14 @@ const FormularioSendW = () => {
                         })}
                         className={errors.numbers ? 'p-invalid' : ''}
                     />
-
-                    <Button type="button" icon="pi pi-plus" className="p-button-outlined" onClick={handleAddPhoneNumber} />
+                    <Button
+                        type="button"
+                        icon="pi pi-plus"
+                        className="p-button-outlined"
+                        onClick={handleAddPhoneNumber}
+                        name="addPhoneNumber" // Cambia el nombre del campo aquí
+                    />
+                    {/* <Button type="button" icon="pi pi-plus" className="p-button-outlined" onClick={handleAddPhoneNumber} /> */}
                 </div>
                 {errors.numbers && <small className="p-error">{errors.numbers.message}</small>}
                 <ul>

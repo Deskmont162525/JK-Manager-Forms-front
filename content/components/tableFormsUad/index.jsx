@@ -112,7 +112,7 @@ const TableFormsUsersDetailAd = ({ dataClientesA }) => {
             type: 'array'
           });
       
-          saveAsExcelFile(excelBuffer, 'products');
+          saveAsExcelFile(excelBuffer, products[0]?.usuario?.username);
         });
       };
       

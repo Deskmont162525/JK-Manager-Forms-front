@@ -58,10 +58,28 @@ export const menuItemsAd = [
                             separator: true
                         },
                         {
+                            id: 2,
+                            label: 'Solicitar Soporte Técnico',
+                            icon: 'pi pi-cog',
+                            url: `/${url_serve}/admins-perfil/solicitar-soporte`
+                        },
+                        {
+                            separator: true
+                        },
+                        {
                             id: 3,
                             label: 'Envio Masivo',
                             icon: 'pi pi-whatsapp',
                             url: `/${url_serve}/admins-perfil/send-whatsapp`
+                        },
+                        {
+                            separator: true
+                        },
+                        {
+                            id: 3,
+                            label: 'Cargar Información',
+                            icon: 'pi pi-upload',
+                            url: `/${url_serve}/admins-perfil/cargar-archivos`
                         }
                     ]
                 }

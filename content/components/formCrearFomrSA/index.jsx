@@ -12,6 +12,7 @@ const CreateFormSA = () => {
     const [formData, setFormData] = useState({
         nombre: '',
         descripcion: '',
+        nameForm:'',
         id_usuario: ''
     });
     const { dispatchAuth } = useContext(authContext);
@@ -62,6 +63,11 @@ const CreateFormSA = () => {
                     <label htmlFor="descripcion">Descripción</label>
                     <InputText id="descripcion" name="descripcion" value={formData.descripcion} onChange={onChangeInputForm} />
                     {error.descripcion && <small className="p-error">Campo requerido*</small>}
+                </div>
+                <div className="p-field p-col-12">
+                    <label htmlFor="id_usuario">Nombre Url-form</label>
+                    <InputText id="nameForm" name="nameForm" value={formData.nameForm} onChange={onChangeInputForm} />
+                    {error.nameForm && <small className="p-error">Campo requerido*</small>}
                 </div>
                 <div className="p-field p-col-12">
                     <label htmlFor="id_usuario">ID de usuario</label>
