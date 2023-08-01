@@ -14,7 +14,8 @@ export default function TableStadoCuentaUsu({ ProductService }) {
         { field: 'saldo_credito', header: 'SALDO CREDITO' },
         { field: 'cuotas', header: 'CUOTAS' },
         { field: 'cuota_siguiente', header: 'CUOTA SIGUIENTE' },
-        { field: 'fecha_1_cuota', header: 'FECHA 1 CUOTA' }
+        { field: 'fecha_1_cuota', header: 'FECHA 1 CUOTA' },
+        { field: 'valor_cuota', header: 'VALOR CUOTA' }
     ];
 
     const exportColumns = cols.map((col) => ({ title: col.header, dataKey: col.field }));
@@ -50,6 +51,10 @@ export default function TableStadoCuentaUsu({ ProductService }) {
         return dataReturn;
     };
 
+    const valorCuotaBodyTemplate = (rowData) => {
+        const dataReturn = rowData.valor_cuota?.toLocaleString('es-ES', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        return dataReturn;
+    };
     return (
         <div className="card">
             <Tooltip target=".export-buttons>button" position="bottom" />
@@ -61,6 +66,7 @@ export default function TableStadoCuentaUsu({ ProductService }) {
                 <Column field="cuotas" header="CUOTAS" sortable style={{ minWidth: '6rem' }}></Column>
                 <Column field="cuota_siguiente" header="CUOTA SIGUIENTE" sortable style={{ minWidth: '6rem' }}></Column>
                 <Column field="fecha_1_cuota" header="FECHA 1 CUOTA" body={dateCreBodyTemplate} sortable style={{ minWidth: '6rem' }}></Column>
+                <Column field="valorCuotaBodyTemplate" header="VALOR CUOTA" body={valorCuotaBodyTemplate} sortable style={{ minWidth: '6rem' }}></Column>
             </DataTable>
         </div>
     );
