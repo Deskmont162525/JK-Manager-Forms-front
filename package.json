@@ -69,6 +69,7 @@
         "react-toastify": "^9.1.2",
         "react-transition-group": "^4.4.5",
         "reactstrap": "^9.1.9",
+        "serve": "^14.2.0",
         "uuid": "^9.0.0",
         "validator": "^13.9.0",
         "whatsapp-web.js": "^1.19.5",
