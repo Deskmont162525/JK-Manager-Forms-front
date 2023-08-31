@@ -63,7 +63,7 @@ const Login = () => {
                     <div className="p-fluid">
                         <div className="p-field">
                             <label htmlFor="correo">Correo electrónico</label>
-                            <InputText id="correo" name="correo" type="correo" value={formData.correo} onChange={handleChange} className={classNames({ 'p-invalid': submitted && !formData.correo })} hideIcon="true" />
+                            <InputText id="correo" name="correo" type="correo" value={formData.correo} onChange={handleChange} className={classNames({ 'p-invalid': submitted && !formData.correo })} hideicon="true" />
 
                             {submitted && !formData.correo && <small className="p-error">El correo electrónico es obligatorio.</small>}
                         </div>
